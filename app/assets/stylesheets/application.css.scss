@@ -15,3 +15,40 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+
+
+.header {
+  border-bottom: solid 4px #EB2B36;
+  background: #000000;
+  min-height: 90px;
+  padding-top: 30px;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: 900;
+  text-transform: uppercase;
+  color: white;
+  position: relative;
+}
+
+.layout_wrap {
+  max-width: 1200px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 45px;
+}
+
+.navbar-right li {
+  display: inline;
+  list-style: none;
+  margin-right: 7px;
+  }
+
+.navbar-right {
+  margin-right: 50px;
+}
+
+.logo {
+  margin-left: 50px;
+}
