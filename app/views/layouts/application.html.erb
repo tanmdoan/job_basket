@@ -6,7 +6,21 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
+  <nav class="navbar navbar-default navbar-fixed-top header" role="navigation">
+    <div class="layout-wrap">
+      <%= link_to 'Job Basket', "#", class: 'logo' %>
+
+      <ul class='navbar-right'>
+        <li><%= link_to 'Finder', "#" %></li>
+        <li><%= link_to 'Resources', "#" %></li>
+        <li><%= link_to 'Tracker', "#" %></li>
+      </ul>
+    </div>
+  </nav>
+  
 
 <%= yield %>
 

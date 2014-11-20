@@ -15,3 +15,57 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+
+
+.header {
+  border-bottom: solid 4px #EB2B36;
+  background: #000000;
+  min-height: 90px;
+  padding-top: 37px;
+  font-size: 12px;
+  font-family: 'Ubuntu';
+  font-weight: 900;
+  text-transform: uppercase;
+  color: white;
+  position: relative;
+}
+
+.header a {
+  color: white;
+  &:hover {
+    text-decoration: none;
+    color: #EB2B36 !important;
+    opacity: 1;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.layout_wrap {
+  max-width: 1200px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 45px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.navbar-right li {
+  display: inline;
+  list-style: none;
+  margin-right: 7px;
+  }
+
+.navbar-right {
+  margin-right: 50px;
+}
+
+.logo {
+  margin-left: 50px;
+}
