@@ -11,7 +11,9 @@ gem 'bootstrap-sass',     '~> 3.3.1'
 gem 'autoprefixer-rails', '~> 4.0.0.1'
 gem 'execjs'
 gem 'therubyracer'
-gem "omniauth-github"
+gem 'omniauth-github'
+gem 'faraday'
+gem 'figaro'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring', '~> 1.1.3',        group: :development
 
