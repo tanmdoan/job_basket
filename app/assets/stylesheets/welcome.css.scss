@@ -1,3 +1,29 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main-carousel {
+  height: 340px;
+  width: auto;
+}
+
+.car-img {
+  height: auto;
+  width: 100%;
+  margin-bottom: 200px;
+  position: relative;
+  bottom: 200px;
+}
+
+.car-img-1 {
+  height: auto;
+  width: 100%;
+  margin-bottom: 200px;
+  position: relative;
+  bottom: 110px;
+}
+
+.carousel-caption {
+  position: relative;
+  top: 240px;
+}
