@@ -11,7 +11,7 @@ gem 'bootstrap-sass',     '~> 3.3.1'
 gem 'autoprefixer-rails', '~> 4.0.0.1'
 gem 'execjs'
 gem 'therubyracer'
-
+gem 'jobs-remotely', :github => 'turingschool/jobs-remotely'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'spring', '~> 1.1.3',        group: :development

@@ -2,6 +2,8 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'capybara/rspec'
+require 'capybara/rails'
 require 'shoulda/matchers'
 require 'spec_helper'
 # Requires supporting ruby files with custom matchers and macros, etc, in
