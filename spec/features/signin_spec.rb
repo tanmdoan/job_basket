@@ -13,11 +13,11 @@ RSpec.describe "Login with GitHub", type: :feature do
   end
 
   describe "user with invalid information" do
-    xit "has authentication errors" do
+    it "has authentication errors" do
       OmniAuth.config.mock_auth[:github] = :invalid_credentials
       visit root_path
       click_link "Sign in with GitHub"
-      expect(page).to have_content "Sorry, login failed!"
+      expect(page).to have_content("Sorry, login failed!")
     end
   end
 end
