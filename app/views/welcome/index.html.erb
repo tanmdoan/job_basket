@@ -38,14 +38,3 @@
   </a>
 
 </div>
-<!-- Where the omniauth github stuff is happening  -->
-  <div>
-    <% if current_user %>
-    <%= "Welcome #{current_user.name}" %>
-    <% else %>
-    <%= link_to 'Sign in with GitHub', login_path %>
-    <% end %>
-  </div>
-  <div>
-    <%= link_to 'Sign out!', signout_path %>
-  </div>
