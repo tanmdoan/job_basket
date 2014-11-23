@@ -18,3 +18,17 @@
     </div>
   </div>
 </div>
+
+<div id='job-wrapper'>
+  <div class= 'container-fluid'>
+    <div class='row'>
+      <%= div_for(@jobs, class: 'listing col-lg-12 col-md-12 col-sm-12') do |job| %>
+         <%= job.title %>
+         <div id=<%="#{job.id}-description" %>>
+           <%= sanitize job.description %>
+           <%= job.url %>
+         </div>
+      <% end %>
+    </div>
+  </div>
+</div> <!-- this is the end of the job wrapper -->

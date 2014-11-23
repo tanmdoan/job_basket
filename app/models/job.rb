@@ -2,9 +2,8 @@ class Job < ActiveRecord::Base
   belongs_to :company
 
 
-
-
   def self.build_remote_jobs(entries)
+
     entries.each do |entry|
       self.create(title: entry.title,
                   description: entry.description,
@@ -14,6 +13,5 @@ class Job < ActiveRecord::Base
                  )
     end
   end
-
 
 end
