@@ -17,6 +17,8 @@ gem 'figaro'
 gem 'jobs-remotely', :github => 'turingschool/jobs-remotely'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring', '~> 1.1.3',        group: :development
+gem 'sanitize'
+gem 'htmlentities', '~> 4.3.2'
 
 group :test do
   gem 'shoulda-matchers', '~>2.7.0',  require: false
