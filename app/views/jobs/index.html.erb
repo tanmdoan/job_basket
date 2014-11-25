@@ -1,15 +1,15 @@
-<button type="button" class="btn btn-sm" data-toggle="collapse" data-target="#demo" aria-expanded="true" aria-controls="demo">
+<button type="button" class="btn btn-sm filter-btn" data-toggle="collapse" data-target="#filter-wrapper" aria-expanded="true" aria-controls="filter-wrapper">
   Filter
 </button>
 
-<div id="demo" class="collapse in">
+<div id="filter-wrapper" class="collapse in">
   <div class='location'>
-    <div class="btn-group" data-toggle="buttons">
+    <div class= 'filter-buttons' data-toggle="buttons">
       <h5> Locations </h5>
       <% @jobs.each do |job| %>
         <% if job.location %>
           <label id="<%=job.location.to_s.split(" ")[0]%>" class="btn btn-primary btn-xs filter-button">
-            <input type="checkbox" autocomplete="off" value=<%= job.location %>> <%= job.location %>
+            <input type="radio" autocomplete="off" value=<%= job.location %>> <%= job.location %>
           </label>
         <% end %>
       <% end %>

@@ -16,8 +16,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,600,400);
 
 
+body {
+  font-family: 'Open Sans' !important;
+  font-weight: 600;
+}
 
 .header {
   border-bottom: solid 4px #EB2B36;
@@ -74,4 +79,8 @@
   width: auto;
   position: relative;
   bottom: 30px;
+}
+
+.btn {
+  border-radius: 0px;
 }
