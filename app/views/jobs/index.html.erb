@@ -25,12 +25,11 @@
         <%= div_for(@jobs, class: 'listing col-lg-12 col-md-12 col-sm-12') do |job| %>
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title"><%= job.title %></h3>
+              <h3 class="panel-title <%=job.id%>"><%= job.title %></h3>
             </div>
             <div class='panel-body'>
-              <div id=<%="#{job.id}-description" %>>
-                <%= sanitize job.description %>
-              </div>
+              URL: <%= job.url %>
+              <div>Posted On: <%= job.posted_on %></div>
             </div>
           </div>
         <% end %>
