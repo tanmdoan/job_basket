@@ -6,15 +6,13 @@
   <div class='location'>
     <div class="btn-group" data-toggle="buttons">
       <h5> Locations </h5>
-      <label id='btn-circle' class="btn btn-primary btn-xs">
-        <input type="checkbox" autocomplete="off" checked> Checkbox 1
-      </label>
-      <label id='btn-circle' class="btn btn-primary btn-xs">
-        <input type="checkbox" autocomplete="off"> Checkbox 2
-      </label>
-      <label id='btn-circle' class="btn btn-primary btn-xs">
-        <input type="checkbox" autocomplete="off"> Checkbox 3
-      </label>
+      <% @jobs.each do |job| %>
+        <% if job.location %>
+          <label id="<%=job.location.to_s.split(" ")[0]%>" class="btn btn-primary btn-xs filter-button">
+            <input type="checkbox" autocomplete="off" value=<%= job.location %>> <%= job.location %>
+          </label>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -23,7 +21,7 @@
   <div class= 'container-fluid'>
     <div class='row'>
         <%= div_for(@jobs, class: 'listing col-lg-12 col-md-12 col-sm-12') do |job| %>
-          <div class="panel panel-default">
+          <div class="<%=job.location.to_s.split(" ")[0]%> panel panel-default hide-locations">
             <div class="panel-heading">
               <h3 class="panel-title <%=job.id%>"><%= job.title %></h3>
             </div>

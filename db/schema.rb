@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20141125001517) do
-
+ActiveRecord::Schema.define(version: 20141125012928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +48,7 @@ ActiveRecord::Schema.define(version: 20141125001517) do
     t.string   "url"
     t.boolean  "remote",      default: false
     t.string   "posted_on"
+    t.string   "location"
   end
 
   create_table "updates", force: true do |t|
@@ -66,6 +65,7 @@ ActiveRecord::Schema.define(version: 20141125001517) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nickname"
   end
 
 end

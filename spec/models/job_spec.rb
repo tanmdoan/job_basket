@@ -6,4 +6,5 @@ RSpec.describe Job, :type => :model do
     Job.build_remote_jobs(jobs)
     expect(Job.all.count).to eq(25)
   end
+  it { should have_attribute(:location) }
 end
