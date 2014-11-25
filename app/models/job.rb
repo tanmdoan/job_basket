@@ -24,7 +24,9 @@ class Job < ActiveRecord::Base
       new_job.job_type           = job["type"]
       new_job.how_to_apply       = job["how_to_apply"]
       new_job.github_url         = job["github_url"]
-      new_job.full_time          = job["full_time"]
+      new_job.company_name       = job["company"]
+      new_job.company_logo       = job["company_logo"]
+      new_job.company_id         = job["company_id"]
 
       new_job.save
     end
