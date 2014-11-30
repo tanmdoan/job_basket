@@ -7,7 +7,7 @@
   <%= f.text_field :description %>
 <br><br>
   <%= f.label :location %>
-  <%= f.text_field :location %>
+  <%= f.text_field :location%>
 <br><br>
   <%= f.label :how_to_apply %>
   <%= f.text_field :how_to_apply %>
@@ -30,10 +30,10 @@
 
 <%= form_for @job, url: jobs_path do |f| %>
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_field :description, id: "github_description" %>
   <br>
   <%= f.label :location %>
-  <%= f.text_field :location %>
+  <%= f.text_field :location, id: "github_location" %>
   <br>
   <%= f.label :job_type %>
   <%= f.text_field :job_type %>
