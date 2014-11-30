@@ -4,6 +4,10 @@ class JobsController < ApplicationController
     @job    = Job.new
   end
 
+  def new
+    @job = Job.new
+  end
+
   def show
     @job = Job.find(params[:id])
   end
@@ -16,6 +20,7 @@ class JobsController < ApplicationController
     get_json  = JSON.parse(response.body)
     job       = Job.new
     job.job_builder(get_json)
+    @job = Job.create(job_params)
     redirect_to jobs_path
   end
 

@@ -12,10 +12,10 @@ def github_mock_auth
       token: 'mock_token'
     }
   })
+end
 
-  def login
-    visit root_path
-    github_mock_auth
-    click_on('Sign In With Github')
-  end
+def login
+  visit root_path
+  github_mock_auth
+  click_link('Connect with Github')
 end

@@ -6,11 +6,15 @@
       <% if current_user %>
         <li><%= "Welcome #{current_user.name.split(' ')[0]}" %></li>
         <li><%= link_to 'Jobs', jobs_path %></li>
+        <li><%= link_to 'Add Jobs', new_job_path %> </li>
         <li><%= link_to 'Sign Out', signout_path %></li>
       <% else %>
 
         <li>
-          <button class="btn btn-xs btn-github"><i class="fa fa-github"></i><%= link_to " | Connect with Github", login_path, class:'github-text' %></button>
+          <button class="btn btn-xs btn-github">
+            <i class="fa fa-github"></i>
+            <%= link_to " | Connect with Github", login_path, class:'github-text', id:'login_button'%>
+          </button>
         </li>
       <% end %>
     </ul>

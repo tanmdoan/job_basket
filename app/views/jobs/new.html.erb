@@ -1,0 +1,42 @@
+<%= form_for @job do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+<br><br>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+<br><br>
+  <%= f.label :location %>
+  <%= f.text_field :location%>
+<br><br>
+  <%= f.label :how_to_apply %>
+  <%= f.text_field :how_to_apply %>
+<br><br>
+  <%= f.label :company_name %>
+  <%= f.text_field :company_name %>
+<br><br>
+  <%= f.label :company_url %>
+  <%= f.text_field :company_url %>
+<br><br>
+  <%= f.label :remote %>
+  <%= f.text_field :remote %>
+<br><br>
+  <%= f.submit %>
+
+<% end %>
+<br>
+<br>
+<br>
+
+<%= form_for @job, url: jobs_path do |f| %>
+  <%= f.label :description %>
+  <%= f.text_field :description, id: "github_description" %>
+  <br>
+  <%= f.label :location %>
+  <%= f.text_field :location, id: "github_location" %>
+  <br>
+  <%= f.label :job_type %>
+  <%= f.text_field :job_type %>
+  <br>
+  <%= f.submit "Retrieve jobs from Github" %>
+<% end %>
