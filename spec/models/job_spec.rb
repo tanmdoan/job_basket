@@ -7,4 +7,6 @@ RSpec.describe Job, :type => :model do
     expect(Job.all.count).to eq(25)
   end
   it { should have_attribute(:location) }
+  it { should have_many(:favorite_jobs) }
+  it { should have_many(:users).through(:favorite_jobs) }
 end

@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   has_many :updates, as: :news
+  has_many :jobs, through: :favorite_jobs
+  has_many :favorite_jobs
+
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
