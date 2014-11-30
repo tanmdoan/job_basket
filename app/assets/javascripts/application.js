@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap-sprockets
+
+$(document).ready(function() {
+  $('.filter-button').click (function() {
+    var location = $(this).prop('id');
+    $('.hide-locations').hide();
+    $("." + location).show();
+  });
+});

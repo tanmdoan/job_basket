@@ -2,8 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#btn-circle {
-  border-radius: 100%;
-  padding-top: 32px;
-  padding-bottom: 32px;
+.filter-btn {
+  margin-top: 17px;
+}
+
+.filter-buttons .btn {
+  background-color: #EB2B36;
+  border-color: #EB2B36;
+}
+
+.filter-buttons .btn:hover {
+  background-color: #EB2B36;
+  border-color: #EB2B36;
+}
+
+.filter-buttons .btn.active {
+  background-color: #992B36;
+  border-color: #992B36;
+}
+
+
+.btn-group label {
+  margin-left: 30px;
+}
+
+#job-wrapper {
+  margin-top: 50px;
 }

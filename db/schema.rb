@@ -71,6 +71,9 @@ ActiveRecord::Schema.define(version: 20141125224744) do
     t.string   "company_logo"
     t.string   "github_url"
     t.boolean  "full_time"
+    t.string   "url"
+    t.boolean  "remote",      default: false
+    t.string   "posted_on"
   end
 
   create_table "updates", force: true do |t|
@@ -87,6 +90,7 @@ ActiveRecord::Schema.define(version: 20141125224744) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nickname"
   end
 
 end

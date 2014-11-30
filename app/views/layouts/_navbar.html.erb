@@ -1,16 +1,17 @@
 <nav class="navbar navbar-default navbar-fixed-top header" role="navigation">
   <div class="layout-wrap">
-    <%= link_to 'Job Basket', "#", class: 'logo' %>
+    <%= link_to image_tag('job_basket_logo.gif', class: 'logo'), root_path%>
 
     <ul class='navbar-right'>
       <% if current_user %>
         <li><%= "Welcome #{current_user.name.split(' ')[0]}" %></li>
         <li><%= link_to 'Jobs', jobs_path %></li>
-        <li><%= link_to 'Resources', "#" %></li>
-        <li><%= link_to 'Tracker', "#" %></li>
         <li><%= link_to 'Sign Out', signout_path %></li>
       <% else %>
-        <li><%= link_to 'Sign in with GitHub', login_path %></li>
+
+        <li>
+          <button class="btn btn-xs btn-github"><i class="fa fa-github"></i><%= link_to " | Connect with Github", login_path, class:'github-text' %></button>
+        </li>
       <% end %>
     </ul>
   </div>
