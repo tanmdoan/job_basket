@@ -4,10 +4,11 @@ RSpec.describe "Login with GitHub", type: :feature do
 
   describe "user with valid information" do
     it "is successful" do
-      github_mock_auth
+
       visit root_path
       expect(page).to have_content "Connect with Github"
-      click_link "Connect with Github"
+
+      login
       expect(page).to have_content "Jobs"
     end
   end

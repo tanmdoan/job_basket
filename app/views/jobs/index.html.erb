@@ -51,6 +51,9 @@
               <div>Posted On: <%= job.posted_on %></div>
               <div>Description: <%= sanitize job.description %></div>
             </div>
+            <div>
+             <%= link_to 'Favorite', favorite_jobs_path(job_id: job.id), method: "post", class: 'btn btn-sm' %>
+            </div>
           </div>
         <% end %>
     </div>
