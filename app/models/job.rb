@@ -17,6 +17,7 @@ class Job < ActiveRecord::Base
     json_response.each do |job|
 
       company = Company.find_or_create_by(name: job["company"])
+      company_id = company.id
       new_job = company.jobs.new
 
       new_job.title              = job["title"]
@@ -29,7 +30,7 @@ class Job < ActiveRecord::Base
       new_job.github_url         = job["github_url"]
       new_job.company_name       = job["company"]
       new_job.company_logo       = job["company_logo"]
-      new_job.company_id         = job["company_id"]
+      new_job.company_id         = company_id
 
       new_job.save
     end

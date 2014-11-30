@@ -2,18 +2,7 @@
   <div class='row'>
     <div class="col-lg-12">
 
-      <%= form_for @job, url: jobs_path do |f| %>
-      <%= f.label :description %>
-      <%= f.text_field :description %>
-      <br>
-      <%= f.label :location %>
-      <%= f.text_field :location %>
-      <br>
-      <%= f.label :job_type %>
-      <%= f.text_field :job_type %>
-      <br>
-      <%= f.submit "Add jobs from Github" %>
-      <% end %>
+
 
       <button type="button" class="btn btn-sm filter-btn" data-toggle="collapse" data-target="#filter-wrapper" aria-expanded="true" aria-controls="filter-wrapper">
         Filter
