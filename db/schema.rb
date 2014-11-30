@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125224744) do
+ActiveRecord::Schema.define(version: 20141130223936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "author"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "companies", force: true do |t|
     t.string   "description"
@@ -61,9 +71,12 @@ ActiveRecord::Schema.define(version: 20141125224744) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "company_id"
+    t.string   "url"
+    t.boolean  "remote",            default: false
+    t.string   "posted_on"
+    t.string   "location"
     t.integer  "github_id"
     t.string   "github_created_at"
-    t.string   "location"
     t.string   "job_type"
     t.text     "how_to_apply"
     t.string   "company_name"
@@ -71,9 +84,6 @@ ActiveRecord::Schema.define(version: 20141125224744) do
     t.string   "company_logo"
     t.string   "github_url"
     t.boolean  "full_time"
-    t.string   "url"
-    t.boolean  "remote",      default: false
-    t.string   "posted_on"
   end
 
   create_table "updates", force: true do |t|
