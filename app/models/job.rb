@@ -7,7 +7,10 @@ class Job < ActiveRecord::Base
   end
 
   def options
-    "description=ruby&location=new+york&full_time=true"
+    description = params["job"]["description"]
+    location    = params["job"]["location"]
+    # type        = params["job"]["job_type"]
+    "description=#{description}&location=#{location}"
   end
 
   def job_builder(json_response)
