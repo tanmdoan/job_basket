@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125012928) do
+ActiveRecord::Schema.define(version: 20141125224744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,16 +39,41 @@ ActiveRecord::Schema.define(version: 20141125012928) do
     t.datetime "updated_at"
   end
 
+  create_table "github_jobs", force: true do |t|
+    t.integer  "github_id"
+    t.string   "github_created_at"
+    t.string   "title"
+    t.string   "location"
+    t.string   "type"
+    t.text     "description"
+    t.text     "how_to_apply"
+    t.string   "company"
+    t.string   "company_url"
+    t.string   "company_logo"
+    t.string   "github_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "jobs", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "company_id"
+    t.integer  "github_id"
+    t.string   "github_created_at"
+    t.string   "location"
+    t.string   "job_type"
+    t.text     "how_to_apply"
+    t.string   "company_name"
+    t.string   "company_url"
+    t.string   "company_logo"
+    t.string   "github_url"
+    t.boolean  "full_time"
     t.string   "url"
     t.boolean  "remote",      default: false
     t.string   "posted_on"
-    t.string   "location"
   end
 
   create_table "updates", force: true do |t|
