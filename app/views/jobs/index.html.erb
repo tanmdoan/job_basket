@@ -50,9 +50,12 @@
               URL: <%= job.url %>
               <div>Posted On: <%= job.posted_on %></div>
               <div>Description: <%= sanitize job.description %></div>
-            </div>
-            <div>
-             <%= link_to 'Favorite', favorite_jobs_path(job_id: job.id), method: "post", class: 'btn btn-sm' %>
+
+              <div class="favorite-btn">
+                <%= button_to favorite_jobs_path(job_id: job.id), method: "post", class: 'btn btn-primary btn-xs' do%>
+                  <i class="fa fa-star"> Favorite</i>
+                <% end %>
+              </div>
             </div>
           </div>
         <% end %>
