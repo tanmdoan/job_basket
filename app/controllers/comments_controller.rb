@@ -6,9 +6,14 @@ class CommentsController < ApplicationController
   end
 
   def new
+    @comment = Comment.new
   end
 
   def create
+    @job     = Job.find_by(params[:id])
+    @comment = @job.comments.create(comment_params)
+    raise "sdasd"
+    redirect_to(:back)
   end
 
   def edit
@@ -19,4 +24,12 @@ class CommentsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:title, :content, :author)
+  end
+
+
 end

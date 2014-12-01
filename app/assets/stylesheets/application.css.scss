@@ -90,7 +90,7 @@ body {
 }
 
 .btn-github {
-  
+
   color: black;
   text-shadow: 0 0.7px 0 rgba(0, 0, 0, 0.1);
   background-color: #f2f2f2;
@@ -121,4 +121,15 @@ body {
 .btn-github:active,
 .btn-github.active {
   background-color: #cdcdcd \9;
+}
+
+.seventy_percent {
+  width: 65%;
+  float:left;
+}
+
+.comment_section {
+  width: 30%;
+  float: left;
+  margin-left: 5%;
 }
