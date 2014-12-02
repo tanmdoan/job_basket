@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/signout'              => 'sessions#destroy',       as: :signout
   get '/auth/github/callback' => 'sessions#create'
   get '/auth/failure'         => 'sessions#failure'
+
 end

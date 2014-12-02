@@ -2,18 +2,6 @@ class Job < ActiveRecord::Base
   belongs_to :company
   has_many :comments, as: :commentable
 
-  def json_response
-    response  = Faraday.get("https://jobs.github.com/positions.json?#{options}")
-    get_json  = JSON.parse(response.body)
-  end
-
-  def options
-    description = params["job"]["description"]
-    location    = params["job"]["location"]
-    # type        = params["job"]["job_type"]
-    "description=#{description}&location=#{location}"
-  end
-
   def job_builder(json_response)
     json_response.each do |job|
 
