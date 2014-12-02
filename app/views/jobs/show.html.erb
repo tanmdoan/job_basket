@@ -1,0 +1,38 @@
+<div id='job-wrapper'>
+  <div class='seventy_percent'>
+    <div class="panel panel-default hide-locations">
+      <div class="panel-heading">
+        <h3 class="panel-title <%=@job.id%>"><%= @job.title %></h3>
+      </div>
+      <div class='panel-body'>
+        URL: <%= @job.url %>
+        <div>Posted On: <%= @job.posted_on %></div>
+        <div>Description: <%= sanitize @job.description %></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="comment_section">
+    <h1> Job News </h1>
+    <%= form_for @comment, url: comments_path, html: { :method => :post } do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <br>
+      <br/>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+      <br><br>
+      <%= f.hidden_field :author, value: current_user.name %>
+      <%= f.submit %>
+    <% end  %>
+
+    <% @job.comments.each do |comment| %>
+      <%= comment.title %><br><br>
+      <%= comment.content %><br><br>
+      <%= comment.author %><br><br>
+    <% end %>
+    <br><br><br><br><br>
+
+  </div>
+
+</div> <!-- this is the end of the job wrapper -->

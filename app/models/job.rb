@@ -1,19 +1,9 @@
 class Job < ActiveRecord::Base
   belongs_to :company
-  has_many :users, through: :favorite_jobs
-  has_many :favorite_jobs
+  has_many   :comments, as: :commentable
+  has_many   :users, through: :favorite_jobs
+  has_many   :favorite_jobs
 
-  def json_response
-    response  = Faraday.get("https://jobs.github.com/positions.json?#{options}")
-    get_json  = JSON.parse(response.body)
-  end
-
-  def options
-    description = params["job"]["description"]
-    location    = params["job"]["location"]
-    # type        = params["job"]["job_type"]
-    "description=#{description}&location=#{location}"
-  end
 
   def job_builder(json_response)
     json_response.each do |job|
@@ -38,7 +28,7 @@ class Job < ActiveRecord::Base
     end
   end
 
-  def self.entries  
+  def self.entries
     JobFetcher::RemoteJobFetcher.new.entries
   end
 
