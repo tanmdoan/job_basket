@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(version: 20141130223936) do
     t.datetime "updated_at"
   end
 
+  create_table "favorite_jobs", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "github_jobs", force: true do |t|
     t.integer  "github_id"
     t.string   "github_created_at"

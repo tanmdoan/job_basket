@@ -1,6 +1,9 @@
 class Job < ActiveRecord::Base
   belongs_to :company
-  has_many :comments, as: :commentable
+  has_many   :comments, as: :commentable
+  has_many   :users, through: :favorite_jobs
+  has_many   :favorite_jobs
+
 
   def job_builder(json_response)
     json_response.each do |job|
@@ -26,8 +29,9 @@ class Job < ActiveRecord::Base
   end
 
   def self.entries
-    RemoteJobFetcher.new.entries
+    JobFetcher::RemoteJobFetcher.new.entries
   end
+
 
   def self.build_remote_jobs(entries)
 

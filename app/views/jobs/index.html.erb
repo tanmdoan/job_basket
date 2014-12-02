@@ -1,12 +1,28 @@
 <div class='container-fluid'>
   <div class='row'>
     <div class="col-lg-12">
-
-
+     
+      <%= form_for @job, url: jobs_path do |f| %>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+      <br>
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+      <br>
+      <%= f.label :job_type %>
+      <%= f.text_field :job_type %>
+      <br>
+      <%= f.submit "Add jobs from Github" %>
+      <% end %>
 
       <button type="button" class="btn btn-sm filter-btn" data-toggle="collapse" data-target="#filter-wrapper" aria-expanded="true" aria-controls="filter-wrapper">
         Filter
       </button>
+
+      <!-- This is a div to store our flash messages -->
+      <div class='.unobtrusive-flash-container'>
+
+      </div>
 
       <div id="filter-wrapper" class="collapse in">
         <div class='location'>
@@ -19,6 +35,13 @@
                 </label>
               <% end %>
             <% end %>
+            <h5>Job Type</h5>
+            <label id= 'true' class='btn btn-primary btn-xs filter-button'>
+              <input type="radio" autocomplete="off">Remote
+            </label>
+            <label id= 'false' class='btn btn-primary btn-xs filter-button'>
+              <input type="radio" autocomplete="off">On-Site
+            </label>
           </div>
         </div>
       </div>
@@ -31,7 +54,7 @@
   <div class= 'container-fluid'>
     <div class='row'>
         <%= div_for(@jobs, class: 'listing col-lg-12 col-md-12 col-sm-12') do |job| %>
-          <div class="<%=job.location.to_s.split(" ")[0]%> panel panel-default hide-locations">
+          <div class="<%=job.location.to_s.split(" ")[0]%> <%= job.remote %> panel panel-default hide-locations">
             <div class="panel-heading">
               <h3 class="panel-title <%=job.id%>"><%= job.title %></h3>
             </div>
@@ -39,6 +62,12 @@
               URL: <%= job.url %>
               <div>Posted On: <%= job.posted_on %></div>
               <div>Description: <%= sanitize job.description %></div>
+
+              <div class="favorite-btn">
+                <%= button_to favorite_jobs_path(job_id: job.id), method: "post", remote: true, class: 'btn btn-primary btn-xs favorite' do%>
+                  <i class="fa fa-star"> Favorite</i>
+                <% end %>
+              </div>
             </div>
           </div>
         <% end %>

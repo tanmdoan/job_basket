@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   helper_method :current_user
+  after_filter :prepare_unobtrusive_flash
 
   private
 

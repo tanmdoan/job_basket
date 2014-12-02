@@ -1,4 +1,4 @@
-class RemoteJobFetcher
+class JobFetcher::Remote
   attr_reader :entries
 
   def initialize

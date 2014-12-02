@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   def index
     @jobs    = Job.all
-    @job    = Job.new
+    @job     = Job.new
   end
 
   def new
@@ -17,8 +17,7 @@ class JobsController < ApplicationController
     description = params["job"]["description"]
     location    = params["job"]["location"]
     options   = "description=#{description}&location=#{location}"
-    response  = Faraday.get("https://jobs.github.com/positions.json?#{options}")
-    get_json  = JSON.parse(response.body)
+    response  = Faraday.get("https://jobs.github.com/positions.json?#{options}&client_id=#{ENV['GITHUB_KEY']}&client_secret=#{ENV['GITHUB_SECRET']}")
     job       = Job.new
     job.job_builder(get_json)
     @job = Job.create(job_params)
