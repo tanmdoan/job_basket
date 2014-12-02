@@ -1,6 +1,8 @@
 class FavoriteJobsController < ApplicationController
 
-
+  def index
+    @favorite_jobs = current_user.favorite_jobs
+  end
   def create
 
     @favorite_job = current_user.favorite_jobs.create(job_id: params[:job_id])
