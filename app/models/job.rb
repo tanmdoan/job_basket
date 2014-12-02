@@ -38,21 +38,36 @@ class Job < ActiveRecord::Base
     end
   end
 
-  def self.entries  
-    JobFetcher::RemoteJobFetcher.new.entries
+  def self.remote_entries
+    JobFetcher::Remote.new.entries
+  end
+
+  def self.entries
+    JobFetcher::StackExchange.new.entries
   end
 
 
-  def self.build_remote_jobs(entries)
+  def self.build_jobs(entries)
 
     entries.each do |entry|
       self.create(title: entry.title,
                   description: entry.description,
                   url: entry.source_url,
                   posted_on: entry.posted_on,
-                  remote: true
+                  remote: false
                  )
     end
   end
 
+  def self.build_remote_jobs(entries)
+    entries.each do |entry|
+      self.create(title: entry.title,
+      description: entry.description,
+      url: entry.source_url,
+      posted_on: entry.posted_on,
+      remote: true
+      )
+    end
+
+  end
 end
