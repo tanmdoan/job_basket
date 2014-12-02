@@ -11,7 +11,7 @@ RSpec.describe 'A user favoriting jobs', type: :feature do
     click_link("Jobs")
     save_and_open_page
     within("#job_1") do
-      expect(page).to have_link("Favorite")
+      expect(page).to have_button("Favorite")
     end
   end
 
@@ -26,8 +26,8 @@ RSpec.describe 'A user favoriting jobs', type: :feature do
     end
 
     expect(user.favorite_jobs.count).to eq(1)
-    expect(user.favorite_jobs.last.id).to eq(1)
-    expect(user.favorite_jobs.last.id).to_not eq(2)
+    expect(user.favorite_jobs.last.job_id).to eq(1)
+    expect(user.favorite_jobs.last.job_id).to_not eq(2)
   end
 
 
