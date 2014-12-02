@@ -1,7 +1,7 @@
 <div class='container-fluid'>
   <div class='row'>
     <div class="col-lg-12">
-
+     
       <%= form_for @job, url: jobs_path do |f| %>
       <%= f.label :description %>
       <%= f.text_field :description %>
@@ -21,7 +21,7 @@
 
       <!-- This is a div to store our flash messages -->
       <div class='.unobtrusive-flash-container'>
-        
+
       </div>
 
       <div id="filter-wrapper" class="collapse in">
