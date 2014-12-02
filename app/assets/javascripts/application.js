@@ -14,11 +14,23 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap-sprockets
+//= require unobtrusive_flash
+//= require unobtrusive_flash_bootstrap
 
 $(document).ready(function() {
   $('.filter-button').click (function() {
-    var location = $(this).prop('id');
+    var filter = $(this).prop('id');
     $('.hide-locations').hide();
-    $("." + location).show();
+    $("." + filter).show();
   });
+
+  var hide_alert = function() {
+    $('.flash').fadeOut(1000);
+  };
+
+  $('.favorite').click (function (){
+    setTimeout(function() { hide_alert(); }, 5000);
+  });
+
+  UnobtrusiveFlash.flashOptions['timeout'] = 6000;
 });

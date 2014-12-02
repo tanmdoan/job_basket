@@ -19,6 +19,11 @@
         Filter
       </button>
 
+      <!-- This is a div to store our flash messages -->
+      <div class='.unobtrusive-flash-container'>
+        
+      </div>
+
       <div id="filter-wrapper" class="collapse in">
         <div class='location'>
           <div class= 'filter-buttons' data-toggle="buttons">
@@ -30,6 +35,13 @@
                 </label>
               <% end %>
             <% end %>
+            <h5>Job Type</h5>
+            <label id= 'true' class='btn btn-primary btn-xs filter-button'>
+              <input type="radio" autocomplete="off">Remote
+            </label>
+            <label id= 'false' class='btn btn-primary btn-xs filter-button'>
+              <input type="radio" autocomplete="off">On-Site
+            </label>
           </div>
         </div>
       </div>
@@ -42,7 +54,7 @@
   <div class= 'container-fluid'>
     <div class='row'>
         <%= div_for(@jobs, class: 'listing col-lg-12 col-md-12 col-sm-12') do |job| %>
-          <div class="<%=job.location.to_s.split(" ")[0]%> panel panel-default hide-locations">
+          <div class="<%=job.location.to_s.split(" ")[0]%> <%= job.remote %> panel panel-default hide-locations">
             <div class="panel-heading">
               <h3 class="panel-title <%=job.id%>"><%= job.title %></h3>
             </div>
@@ -52,7 +64,7 @@
               <div>Description: <%= sanitize job.description %></div>
 
               <div class="favorite-btn">
-                <%= button_to favorite_jobs_path(job_id: job.id), method: "post", class: 'btn btn-primary btn-xs' do%>
+                <%= button_to favorite_jobs_path(job_id: job.id), method: "post", remote: true, class: 'btn btn-primary btn-xs favorite' do%>
                   <i class="fa fa-star"> Favorite</i>
                 <% end %>
               </div>
