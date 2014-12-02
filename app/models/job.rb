@@ -37,9 +37,10 @@ class Job < ActiveRecord::Base
     end
   end
 
-  def self.entries
-    RemoteJobFetcher.new.entries
+  def self.entries  
+    JobFetcher::RemoteJobFetcher.new.entries
   end
+
 
   def self.build_remote_jobs(entries)
 
