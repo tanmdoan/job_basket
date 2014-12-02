@@ -4,7 +4,7 @@
 
     <ul class='navbar-right'>
       <% if current_user %>
-        <li><%= "Welcome #{current_user.name.split(' ')[0]}" %></li>
+        <li><%= link_to "Welcome #{current_user.name.split(' ')[0]}", favorite_jobs_path %></li>
         <li><%= link_to 'Jobs', jobs_path %></li>
         <li><%= link_to 'Add Jobs', new_job_path %> </li>
         <li><%= link_to 'Sign Out', signout_path %></li>

@@ -1,5 +1,7 @@
 class Job < ActiveRecord::Base
   belongs_to :company
+  has_many :users, through: :favorite_jobs
+  has_many :favorite_jobs
 
   def json_response
     response  = Faraday.get("https://jobs.github.com/positions.json?#{options}")
@@ -36,9 +38,10 @@ class Job < ActiveRecord::Base
     end
   end
 
-  def self.entries
-    RemoteJobFetcher.new.entries
+  def self.entries  
+    JobFetcher::RemoteJobFetcher.new.entries
   end
+
 
   def self.build_remote_jobs(entries)
 

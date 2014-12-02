@@ -14,8 +14,12 @@ def github_mock_auth
   })
 end
 
+
 def login
   visit root_path
   github_mock_auth
-  click_link('Connect with Github')
+
+  within(".btn-github") do
+    click_link_or_button('Connect with Github')
+  end
 end
