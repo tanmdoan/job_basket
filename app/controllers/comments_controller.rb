@@ -11,7 +11,6 @@ class CommentsController < ApplicationController
 
   def create
     @job     = Job.find_by(params[:id])
-    raise "sdasd"
     @comment = @job.comments.create(comment_params)
     redirect_to(:back)
   end
