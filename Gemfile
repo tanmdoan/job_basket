@@ -20,6 +20,7 @@ gem 'spring', '~> 1.1.3',        group: :development
 gem 'sanitize'
 gem 'htmlentities', '~> 4.3.2'
 gem 'unobtrusive_flash', '>=3'
+gem 'whenever', require: false
 
 
 group :test do

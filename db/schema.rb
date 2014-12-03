@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130223936) do
+ActiveRecord::Schema.define(version: 20141203210332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,9 +81,9 @@ ActiveRecord::Schema.define(version: 20141130223936) do
     t.string   "url"
     t.boolean  "remote",            default: false
     t.string   "posted_on"
-    t.string   "location"
     t.integer  "github_id"
     t.string   "github_created_at"
+    t.string   "location"
     t.string   "job_type"
     t.text     "how_to_apply"
     t.string   "company_name"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20141130223936) do
     t.string   "company_logo"
     t.string   "github_url"
     t.boolean  "full_time"
+    t.boolean  "user_created",      default: true
   end
 
   create_table "updates", force: true do |t|
