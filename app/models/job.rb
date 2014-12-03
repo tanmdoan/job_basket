@@ -52,7 +52,7 @@ class Job < ActiveRecord::Base
                   description: entry.description,
                   url: entry.source_url,
                   posted_on: entry.posted_on,
-                  user_created: false
+                  user_created: false,
                   remote: false
 
                  )
