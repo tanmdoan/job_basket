@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
   private
 
   def belongs_to_turing?(nickname)
-    url         = "https://api.github.com/users/#{nickname}/orgs"
+    url         = "https://api.github.com/users/#{nickname}/orgs?client_id=#{ENV['GITHUB_KEY']}&client_secret=#{ENV['GITHUB_SECRET']}"
     response    = Faraday.get(url)
     orgs        = JSON.parse(response.body)
     turing_hash = orgs.find { |org| org['id'] == 7934292 }
