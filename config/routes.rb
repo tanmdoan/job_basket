@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   resources :jobs
+  resources :companies
   resources :comments
+  resources :job_comments, only:[:create]
   resources :favorite_jobs, only: [:create, :index]
 
   get '/login'                => redirect('/auth/github'), as: :login

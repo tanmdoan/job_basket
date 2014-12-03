@@ -1,6 +1,5 @@
 class Job < ActiveRecord::Base
   belongs_to :company
-  has_many   :comments, as: :commentable
   has_many   :users, through: :favorite_jobs
   has_many   :favorite_jobs
 
@@ -29,7 +28,7 @@ class Job < ActiveRecord::Base
   end
 
   def self.entries
-    JobFetcher::RemoteJobFetcher.new.entries
+    JobFetcher::Remote.new.entries
   end
 
 
@@ -40,13 +39,23 @@ class Job < ActiveRecord::Base
                   description: entry.description,
                   url: entry.source_url,
                   posted_on: entry.posted_on,
-                  remote: true
+                  remote: true,
+                  user_created: false
                  )
     end
   end
 
+
   def self.unique_locations
     Job.all.map { |job| job.location }.uniq
+  end
+
+  def self.clear_jobs
+    self.where(user_created: false).delete_all
+  end
+
+  def self.build_all_jobs
+    build_remote_jobs(entries)
   end
 
 end

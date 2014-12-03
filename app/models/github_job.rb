@@ -27,6 +27,7 @@ class GithubJob < ActiveRecord::Base
         new_job.company            = job["company"]
         new_job.company_logo       = job["company_logo"]
         new_job.github_url         = job["github_url"]
+        new_job.user_created       = false
       end
     end
     company.save

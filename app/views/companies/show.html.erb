@@ -1,0 +1,37 @@
+<div><%= @company.name %></div>
+
+<div><%= @company.description %></div>
+
+<div><%= @company.team_size %></div>
+
+<hr>
+
+<div class="comment_section">
+  <h1> Company News </h1>
+  <%= form_for(@comment, url: comments_path(id: @company.id), html: { method: :post }) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  <br>
+  <br/>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  <br><br>
+    <%= f.hidden_field :author, value: current_user.name %>
+    <%= f.submit %>
+  <% end  %>
+
+  <br><br><br><br><br>
+
+</div>
+<div><% @comments.each do |comment| %></div>
+
+  <%= comment.title %>
+  <br>
+  <%= comment.content %>
+  <br>
+  <%= comment.author %>
+  <br>
+
+<% end %>
+
+<hr>
