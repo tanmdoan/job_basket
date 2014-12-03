@@ -12,27 +12,4 @@
     </div>
   </div>
 
-  <div class="comment_section">
-    <h1> Job News </h1>
-    <%= form_for ([@job, @comment]) do |f| %>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-      <br>
-      <br/>
-      <%= f.label :content %>
-      <%= f.text_area :content %>
-      <br><br>
-      <%= f.hidden_field :author, value: current_user.name %>
-      <%= f.submit %>
-    <% end  %>
-
-    <% @job.comments.each do |comment| %>
-      <%= comment.title %><br><br>
-      <%= comment.content %><br><br>
-      <%= comment.author %><br><br>
-    <% end %>
-    <br><br><br><br><br>
-
-  </div>
-
 </div> <!-- this is the end of the job wrapper -->
