@@ -32,5 +32,5 @@ $(document).ready(function() {
     setTimeout(function() { hide_alert(); }, 5000);
   });
 
-  UnobtrusiveFlash.flashOptions['timeout'] = 6000;
+  UnobtrusiveFlash.flashOptions['timeout'] = 2500;
 });

@@ -15,6 +15,7 @@ class FavoriteJobsController < ApplicationController
 
       else
         # format.html { render action: "new" }
+        format.js {flash[:error] = "You already favorited this job!"}
         format.json { render json: @favorite_job.errors, status: :unprocessable_entity }
       end
     end

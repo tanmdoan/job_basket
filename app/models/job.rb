@@ -45,6 +45,11 @@ class Job < ActiveRecord::Base
     end
   end
 
+
+  def self.unique_locations
+    Job.all.map { |job| job.location }.uniq
+  end
+
   def self.clear_jobs
     self.where(user_created: false).delete_all
   end
