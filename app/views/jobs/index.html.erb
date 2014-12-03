@@ -1,19 +1,6 @@
 <div class='container-fluid'>
   <div class='row'>
     <div class="col-lg-12">
-     
-      <%= form_for @job, url: jobs_path do |f| %>
-      <%= f.label :description %>
-      <%= f.text_field :description %>
-      <br>
-      <%= f.label :location %>
-      <%= f.text_field :location %>
-      <br>
-      <%= f.label :job_type %>
-      <%= f.text_field :job_type %>
-      <br>
-      <%= f.submit "Add jobs from Github" %>
-      <% end %>
 
       <button type="button" class="btn btn-sm filter-btn" data-toggle="collapse" data-target="#filter-wrapper" aria-expanded="true" aria-controls="filter-wrapper">
         Filter
@@ -28,12 +15,10 @@
         <div class='location'>
           <div class= 'filter-buttons' data-toggle="buttons">
             <h5> Locations </h5>
-            <% @jobs.each do |job| %>
-              <% if job.location %>
-                <label id="<%=job.location.to_s.split(" ")[0]%>" class="btn btn-primary btn-xs filter-button">
-                  <input type="radio" autocomplete="off" value=<%= job.location %>> <%= job.location %>
-                </label>
-              <% end %>
+            <% @locations.each do |location| %>
+              <label id="<%=location.to_s.delete("' ',/;")%>" class="btn btn-primary btn-xs filter-button">
+                <input type="radio" autocomplete="off" value=<%= location %>> <%= location %>
+              </label>
             <% end %>
             <h5>Job Type</h5>
             <label id= 'true' class='btn btn-primary btn-xs filter-button'>
@@ -54,10 +39,11 @@
   <div class= 'container-fluid'>
     <div class='row'>
         <%= div_for(@jobs, class: 'listing col-lg-12 col-md-12 col-sm-12') do |job| %>
-          <div class="<%=job.location.to_s.split(" ")[0]%> <%= job.remote %> panel panel-default hide-locations">
+          <div class="<%=job.location.to_s.delete("' ',/;")%> <%= job.remote %> panel panel-default hide-locations">
             <div class="panel-heading">
               <h3 class="panel-title <%=job.id%>"><%= job.title %></h3>
             </div>
+
             <div class='panel-body'>
               URL: <%= job.url %>
               <div>Posted On: <%= job.posted_on %></div>

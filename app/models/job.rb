@@ -45,4 +45,8 @@ class Job < ActiveRecord::Base
     end
   end
 
+  def self.unique_locations
+    Job.all.map { |job| job.location }.uniq
+  end
+
 end

@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   def index
     @jobs    = Job.all
-    @job     = Job.new
+    @locations = Job.unique_locations
   end
 
   def new

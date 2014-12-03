@@ -78,12 +78,9 @@ ActiveRecord::Schema.define(version: 20141130223936) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "company_id"
-    t.string   "url"
-    t.boolean  "remote",            default: false
-    t.string   "posted_on"
-    t.string   "location"
     t.integer  "github_id"
     t.string   "github_created_at"
+    t.string   "location"
     t.string   "job_type"
     t.text     "how_to_apply"
     t.string   "company_name"
@@ -91,6 +88,9 @@ ActiveRecord::Schema.define(version: 20141130223936) do
     t.string   "company_logo"
     t.string   "github_url"
     t.boolean  "full_time"
+    t.string   "url"
+    t.boolean  "remote",            default: false
+    t.string   "posted_on"
   end
 
   create_table "updates", force: true do |t|
