@@ -19,6 +19,7 @@ class JobsController < ApplicationController
     options   = "description=#{description}&location=#{location}"
     response  = Faraday.get("https://jobs.github.com/positions.json?#{options}&client_id=#{ENV['GITHUB_KEY']}&client_secret=#{ENV['GITHUB_SECRET']}")
     job       = Job.new
+    get_json  = JSON.parse(response.body)
     job.job_builder(get_json)
     @job = Job.create(job_params)
     redirect_to jobs_path

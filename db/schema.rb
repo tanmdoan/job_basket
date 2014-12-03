@@ -20,8 +20,7 @@ ActiveRecord::Schema.define(version: 20141203210332) do
     t.string   "title"
     t.text     "content"
     t.string   "author"
-    t.integer  "commentable_id"
-    t.string   "commentable_type"
+    t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

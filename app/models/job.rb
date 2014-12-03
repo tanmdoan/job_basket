@@ -1,6 +1,5 @@
 class Job < ActiveRecord::Base
   belongs_to :company
-  has_many   :comments, as: :commentable
   has_many   :users, through: :favorite_jobs
   has_many   :favorite_jobs
 
