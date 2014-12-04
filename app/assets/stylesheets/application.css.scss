@@ -14,6 +14,7 @@
  *= require_self
  */
 @import 'favorite_jobs';
+@import 'bootstrap';
 
 body {
   font-family: 'Raleway' !important;
@@ -28,6 +29,10 @@ body {
 }
 .top_margin {
   margin-top:10px;
+}
+.right_pane {
+  width:68%;
+  float:right;
 }
 .header {
   border-bottom: solid 4px #EB2B36;

@@ -11,7 +11,8 @@
     <% if current_user %>
       <%= render partial: 'favorite_jobs/favorites' %>
     <% end %>
-    <%= yield %>
-
+    <div class="right_pane">
+      <%= yield %>
+    </div>
   </body>
 </html>

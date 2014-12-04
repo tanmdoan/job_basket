@@ -7,9 +7,7 @@
       </button>
 
       <!-- This is a div to store our flash messages -->
-      <div class='.unobtrusive-flash-container'>
-
-      </div>
+      <div class='.unobtrusive-flash-container'></div>
 
       <div id="filter-wrapper" class="collapse in">
         <div class='location'>
@@ -30,6 +28,10 @@
           </div>
         </div>
       </div>
+
+
+
+
     </div>
 </div>
 </div>
@@ -47,7 +49,7 @@
             <div class='panel-body'>
               URL: <%= job.url %>
               <div>Posted On: <%= job.posted_on %></div>
-              <div>Description: <%= sanitize job.description %></div>
+              <div>Description: <%= sanitize job.description.truncate(250)  %></div>
 
               <div class="favorite-btn">
                 <%= button_to favorite_jobs_path(job_id: job.id), method: "post", remote: true, class: 'btn btn-primary btn-xs favorite' do%>
