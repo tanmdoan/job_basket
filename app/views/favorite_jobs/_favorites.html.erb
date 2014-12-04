@@ -1,0 +1,13 @@
+<div class="left_pane">
+  <div class="title bottom_margin">Your Favorite Jobs</div>
+  <%= div_for(favorite_jobs, class: 'wrapper top_margin link_hover') do |favorite_job|%>
+    <%= link_to job_path(favorite_job.job_id), class:"link_to" do %>
+      <div class="job_title"><%= favorite_job.job.title %> </div>
+      <div class="job_company">
+        <% if favorite_job.job.company %>
+          <%= favorite_job.job.company.name %> - <%= favorite_job.job.location %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -7,9 +7,7 @@
       </button>
 
       <!-- This is a div to store our flash messages -->
-      <div class='.unobtrusive-flash-container'>
-
-      </div>
+      <div class='.unobtrusive-flash-container'></div>
 
       <div id="filter-wrapper" class="collapse in">
         <div class='location'>
@@ -34,29 +32,37 @@
 </div>
 </div>
 
+<div id='job-wrapper'><div class= 'container-fluid'><div class='row'>
+  <%= div_for(@jobs, class: 'job_list') do |job| %>
+    <%= link_to  job_path(job) do %>
+      <div class="jobs_rp">
+        <div class="<%=job.location.to_s.delete("' ',/;")%> <%= job.remote %>  hide-locations">
+          <h2 class=" <%=job.id%> job_title_index"><%= job.title %></h2>
 
-<div id='job-wrapper'>
-  <div class= 'container-fluid'>
-    <div class='row'>
-        <%= div_for(@jobs, class: 'listing col-lg-12 col-md-12 col-sm-12') do |job| %>
-          <div class="<%=job.location.to_s.delete("' ',/;")%> <%= job.remote %> panel panel-default hide-locations">
-            <div class="panel-heading">
-              <h3 class="panel-title <%=job.id%>"><%= job.title %></h3>
-            </div>
-
-            <div class='panel-body'>
-              URL: <%= job.url %>
-              <div>Posted On: <%= job.posted_on %></div>
-              <div>Description: <%= sanitize job.description %></div>
-
-              <div class="favorite-btn">
-                <%= button_to favorite_jobs_path(job_id: job.id), method: "post", remote: true, class: 'btn btn-primary btn-xs favorite' do%>
-                  <i class="fa fa-star"> Favorite</i>
+          <% end %>
+          <h5 class="<%=job.id%>">
+            <% if job.company %>
+              <%= link_to company_path(job.company.id), class: "job_company_index" do %>
+                <%= job.company.name %>
                 <% end %>
-              </div>
+            <% end %>
+          </h5>
+
+          <div class='panel-body'>
+            <%= link_to "#{job.url}", job.url %>
+            <div><%= job.posted_on ? "This job was posted originaly on #{job.posted_on}" : "" %></div>
+            <div><%= sanitize job.description.truncate(250)  %></div>
+            <div class="favorite-btn">
+              <%= button_to favorite_jobs_path(job_id: job.id), method: "post",
+                                                                remote: true,
+                                                                class: 'btn btn-default btn-xs favorite' do%>
+                <i class="fa fa-star"> </i> Favorite this job!
+              <% end %>
+              <hr>
             </div>
           </div>
-        <% end %>
-    </div>
-  </div>
-</div> <!-- this is the end of the job wrapper -->
+
+        </div>
+      </div>
+  <% end %>
+</div></div></div>

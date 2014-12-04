@@ -13,17 +13,96 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import url(http://fonts.googleapis.com/css?family=Ubuntu);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,600,400);
-
+@import 'favorite_jobs';
+@import 'bootstrap';
+@import 'jquery.sidr.dark';
+@import 'sidr_content';
 
 body {
-  font-family: 'Open Sans' !important;
-  font-weight: 600;
+  font-family: 'Raleway' !important;
+  margin: 0;
+  padding: 0;
+}
+.welcome_box {
+  width: 40%;
+  height: 60vh;
+  background-color: rgba( 50,50,50, 0.7);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3px;
+  margin-top: 180px;
+}
+.github_logo {
+  width: 30%;
+  margin-left:35%;
+}
+.home_text {
+  width: 100%;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 5px;
+  font-size:2.25rem;
+  color: white;
+}
+.texturizer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -90;
+  background: url("dot_12.png") repeat;
 }
 
+.nav_link {
+  float:right;
+  width: 30px;
+  height: 30px;
+  background: url('turing.jpg');
+  background-size:contain;
+  margin-top: 15px;
+}
+.link_to {
+  text-decoration: none;
+}
+.jobs_rp {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+.wrapper {
+  padding:2% 5%%;
+}
+.job_title_index {
+  color: #22c2d0;
+}
+.user_name {
+  margin-top:30px;
+  font-size:2rem;
+  font-weight: 100;
+}
+.job_company_index {
+  color: gray;
+}
+.job_page {
+  width: 90%;
+  margin-left: 5%;
+  font-size: 1.8rem;
+}
+.top_margin {
+  margin-top:10px;
+}
+.right_pane {
+  width:68%;
+  float:right;
+  margin-right: 1%;
+}
+.job_list {
+}
 .header {
   border-bottom: solid 4px #EB2B36;
   background: #000000;
@@ -122,14 +201,42 @@ body {
 .btn-github.active {
   background-color: #cdcdcd \9;
 }
-
+.input_class{
+  color:#22c2d0;
+  border: none;
+  border-bottom: solid 2px;
+  width: 100%;
+  background: #f5f5f5;
+}
+.author_news {
+  color: #22c2d0;
+  font-weight: 600;
+}
+.title_news {
+  color: black;
+  font-weight: 600;
+}
 .seventy_percent {
   width: 65%;
   float:left;
 }
-
-.comment_section {
-  width: 30%;
-  float: left;
+.news_wrapper {
+  width: 90%;
   margin-left: 5%;
+}
+video#bgvid {
+  position: fixed; right: 0; bottom: 0;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto; z-index: -100;
+  background: url(cyclist-tournament_2022x1080.jpg) no-repeat;
+  background-size: cover;
+}
+.comment_section {
+  width: 20%;
+  height: 100vh;
+  border-left: solid rgba(34, 203, 209, 0.26) 1px;
+  position: fixed;
+  overflow: scroll;
+  right: 0;
+  background: white;
 }

@@ -2,7 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.favorite-jobs-header {
-  padding: 5px;
+.left_pane {
+  width: 30%;
+  height: 100vh;
+  background: #181818;
+  border-right: solid #22c2d0 4px;
+  position: fixed;
+  overflow: scroll;
+}
+.left_pane .title {
+  color: white;
+  font-weight: 200;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 20px;
+}
+.job_title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+.job_company {
+  color: gray;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+.link_hover:hover {
+  background: #252525;
+}
+.bottom_margin {
+  padding-bottom: 20px;
 }
