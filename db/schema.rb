@@ -80,9 +80,9 @@ ActiveRecord::Schema.define(version: 20141203210332) do
     t.string   "url"
     t.boolean  "remote",            default: false
     t.string   "posted_on"
+    t.string   "location"
     t.integer  "github_id"
     t.string   "github_created_at"
-    t.string   "location"
     t.string   "job_type"
     t.text     "how_to_apply"
     t.string   "company_name"
