@@ -4,8 +4,39 @@
 <h4><%= @company.description %></h4>
 <h4><%= @company.team_size %></h4>
 
-<div class="">
+
+<div class="comment_section">
+  <div class="news_wrapper">
+    <h3 class="text-center"> Company News </h3>
+    <br>
+    <%= form_for(@comment, url: comments_path(id: @company.id), html: { method: :post }) do |f| %>
+      <%= f.text_field :title, placeholder: "What's happening?", class:"input_class" %>
+      <br>
+      <br/>
+      <%= f.text_area :content, placeholder:"Details, please!", class:"input_class", rows:3%>
+      <br><br>
+      <%= f.hidden_field :author, value: current_user.name %>
+      <%= f.submit "Publish" %>
+    <% end  %>
+
+    <br><br>
+
+    <div>
+      <% @comments.each do |comment| %>
+      <div class="author_news"><%= comment.author %> said:</div>
+      <div class="title_news"><%= comment.title %></div>
+        <div class="comment_news"><%= comment.content %></div>
+      <!-- <%= link_to "Edit", edit_comment_path(comment_id: comment.id) %> -->
+<br><br>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
   <h4 style="margin-bottom: 70px;"> <%=@company.jobs.count %>  available Jobs!</h4>
+<div style="width:70%">
 
   <% @company.jobs.map  do |job| %>
   <%= link_to  job_path(job) do %>
@@ -32,32 +63,3 @@
   <% end %>
 
 </div>
-
-<div class="comment_section">
-  <h1> Company News </h1>
-  <%= form_for(@comment, url: comments_path(id: @company.id), html: { method: :post }) do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  <br>
-  <br/>
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-  <br><br>
-    <%= f.hidden_field :author, value: current_user.name %>
-    <%= f.submit %>
-  <% end  %>
-
-  <br><br><br><br><br>
-
-</div>
-<div>
-  <% @comments.each do |comment| %>
-    <%= comment.title %><br>
-    <%= comment.content %><br>
-    <%= comment.author %><br><br>
-    <br>
-    <%= link_to "Edit", edit_comment_path(comment_id: comment.id) %>
-
-  <% end %>
-</div>
-<hr>

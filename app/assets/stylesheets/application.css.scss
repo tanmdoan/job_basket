@@ -152,14 +152,35 @@ body {
 .btn-github.active {
   background-color: #cdcdcd \9;
 }
-
+.input_class{
+  color:#22c2d0;
+  border: none;
+  border-bottom: solid 2px;
+  width: 100%;
+  background: #f5f5f5;
+}
+.author_news {
+  color: #22c2d0;
+  font-weight: 600;
+}
+.title_news {
+  color: black;
+  font-weight: 600;
+}
 .seventy_percent {
   width: 65%;
   float:left;
 }
-
-.comment_section {
-  width: 30%;
-  float: left;
+.news_wrapper {
+  width: 90%;
   margin-left: 5%;
+}
+.comment_section {
+  width: 20%;
+  height: 100vh;
+  border-left: solid rgba(34, 203, 209, 0.26) 1px;
+  position: fixed;
+  overflow: scroll;
+  right: 0;
+  background: white;
 }
