@@ -15,11 +15,21 @@
  */
 @import 'favorite_jobs';
 @import 'bootstrap';
+@import 'jquery.sidr.dark';
+@import 'sidr_content';
 
 body {
   font-family: 'Raleway' !important;
   margin: 0;
   padding: 0;
+}
+.nav_link {
+  float:right;
+  width: 30px;
+  height: 30px;
+  background: url('turing.jpg');
+  background-size:contain;
+  margin-top: 15px;
 }
 .link_to {
   text-decoration: none;
@@ -35,6 +45,11 @@ body {
 }
 .job_title_index {
   color: #22c2d0;
+}
+.user_name {
+  margin-top:30px;
+  font-size:2rem;
+  font-weight: 100;
 }
 .job_company_index {
   color: gray;

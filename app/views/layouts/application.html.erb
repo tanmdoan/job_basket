@@ -12,6 +12,21 @@
       <%= render partial: 'favorite_jobs/favorites' %>
     <% end %>
     <div class="right_pane">
+
+
+        <% if current_user %>
+      <a id="right-menu" href="#right-menu" class="link_to element nav_link"></a>
+      <div id="sidr-right">
+          <div class="profile" style="background: url(<%= current_user.image %>);background-size: contain;"></div>
+          <div class="text-center user_name"><%= current_user.name %></div>
+          <div class="body_text">
+
+          <%= link_to 'Add Jobs', new_job_path %><br><br>
+          <%= link_to 'Sign Out', signout_path %>
+          <% end %>
+        </div>
+      </div>
+
       <%= yield %>
     </div>
   </body>
