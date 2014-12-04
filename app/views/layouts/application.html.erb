@@ -2,19 +2,16 @@
 <html>
 
   <head>
-    <title>JobBasket</title>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-    <%= csrf_meta_tags %>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <%= render partial: 'layouts/head' %>
   </head>
-
 
   <body>
     <%= render partial: 'layouts/navbar' %>
 
-
-
+    <% if current_user %>
+      <%= render partial: 'favorite_jobs/favorites' %>
+    <% end %>
     <%= yield %>
+
   </body>
 </html>

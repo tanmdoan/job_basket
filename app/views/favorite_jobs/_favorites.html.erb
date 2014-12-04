@@ -1,0 +1,12 @@
+Favorited Jobs
+
+<%= div_for(@favorite_jobs, class: '') do |favorite_job|%>
+
+  <%= link_to job_path(favorite_job.job_id) do %>
+    TITLE: <%= favorite_job.job.title %>
+    COMPANY: <%= favorite_job.job.company.name %>
+    LOCATION: <%= favorite_job.job.location %>
+  <% end %>
+
+  <HR>
+<% end %>
