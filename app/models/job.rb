@@ -55,6 +55,7 @@ class Job < ActiveRecord::Base
                   url: entry.source_url,
                   posted_on: entry.posted_on,
                   user_created: false,
+                  location: entry.title.split(' ')[-4..-1].join[/\(.+/].delete(")("),
                   remote: false
 
                  )
@@ -63,7 +64,7 @@ class Job < ActiveRecord::Base
 
 
   def self.unique_locations
-    Job.all.map { |job| job.location }.uniq
+    Job.all.map { |job| job.location }.uniq.reject{ |j| j == nil }
   end
 
   def self.clear_jobs
