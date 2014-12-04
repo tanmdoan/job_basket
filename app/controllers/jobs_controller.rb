@@ -1,4 +1,5 @@
-class JobsController < ApplicationController
+class JobsController < AuthorizationController
+
   def index
     @jobs    = Job.all
     @locations = Job.unique_locations
@@ -42,4 +43,6 @@ class JobsController < ApplicationController
                                 :github_url,
                                 :full_time)
   end
+
+
 end
