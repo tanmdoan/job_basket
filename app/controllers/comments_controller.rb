@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    fail
   end
 
   def update
