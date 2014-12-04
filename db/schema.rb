@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 20141203210332) do
     t.string   "title"
     t.text     "content"
     t.string   "author"
-    t.integer  "company_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -77,9 +78,6 @@ ActiveRecord::Schema.define(version: 20141203210332) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "company_id"
-    t.string   "url"
-    t.boolean  "remote",            default: false
-    t.string   "posted_on"
     t.integer  "github_id"
     t.string   "github_created_at"
     t.string   "location"
@@ -90,6 +88,9 @@ ActiveRecord::Schema.define(version: 20141203210332) do
     t.string   "company_logo"
     t.string   "github_url"
     t.boolean  "full_time"
+    t.string   "url"
+    t.boolean  "remote",            default: false
+    t.string   "posted_on"
     t.boolean  "user_created",      default: true
   end
 

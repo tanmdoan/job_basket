@@ -1,4 +1,4 @@
-class JobCommentsController < ApplicationController
+class JobCommentsController < AuthorizationController
   def create
     raise 'aaa'
     @job = Job.find_by(params[:id])
