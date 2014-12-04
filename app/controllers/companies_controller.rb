@@ -5,8 +5,8 @@ class CompaniesController < ApplicationController
 
   def show
     @company  = Company.find(params[:id])
-    @comment  = @company.comments.new
     @comments = @company.comments
+    @comment  = Comment.new
   end
 
   def new
