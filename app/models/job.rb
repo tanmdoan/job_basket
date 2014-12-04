@@ -41,6 +41,7 @@ class Job < ActiveRecord::Base
       description: entry.description,
       url: entry.source_url,
       posted_on: entry.posted_on,
+      user_created: false,
       remote: true
       )
     end
@@ -70,8 +71,8 @@ class Job < ActiveRecord::Base
   end
 
   def self.build_all_jobs
-    build_remote_jobs(entries)
-    build_jobs(remote_entries)
+    build_remote_jobs(remote_entries)
+    build_jobs(entries)
   end
 
 
