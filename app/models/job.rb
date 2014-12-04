@@ -71,10 +71,11 @@ class Job < ActiveRecord::Base
     self.where(user_created: false).delete_all
   end
 
-  def self.build_all_jobs
+  def self.build_all_jobs(remote_entries, entries)
     build_remote_jobs(remote_entries)
     build_jobs(entries)
   end
+  
 
 
 end
