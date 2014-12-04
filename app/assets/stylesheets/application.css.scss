@@ -13,17 +13,22 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import url(http://fonts.googleapis.com/css?family=Ubuntu);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:700,600,400);
-
+@import 'favorite_jobs';
 
 body {
-  font-family: 'Open Sans' !important;
-  font-weight: 600;
+  font-family: 'Raleway' !important;
+  margin: 0;
+  padding: 0;
 }
-
+.link_to {
+  text-decoration: none;
+}
+.wrapper {
+  padding:2% 5%%;
+}
+.top_margin {
+  margin-top:10px;
+}
 .header {
   border-bottom: solid 4px #EB2B36;
   background: #000000;
