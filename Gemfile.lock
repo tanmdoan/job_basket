@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/turingschool/jobs-remotely.git
-  revision: d9c380f2614d141c3484a0593bf61864a09832de
+  remote: git://github.com/tanmdoan/jobs-remotely.git
+  revision: 3a7e492df4eaee08a72f5a25070cd661c79e7a43
   specs:
     jobs-remotely (0.0.3)
       faraday
