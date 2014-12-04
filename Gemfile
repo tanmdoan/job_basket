@@ -14,7 +14,7 @@ gem 'therubyracer'
 gem 'omniauth-github'
 gem 'faraday'
 gem 'figaro'
-gem 'jobs-remotely', :github => 'turingschool/jobs-remotely'
+gem 'jobs-remotely', :github => 'tanmdoan/jobs-remotely'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring', '~> 1.1.3',        group: :development
 gem 'sanitize'
