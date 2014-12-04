@@ -24,8 +24,25 @@ body {
 .link_to {
   text-decoration: none;
 }
+.jobs_rp {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
 .wrapper {
   padding:2% 5%%;
+}
+.job_title_index {
+  color: #22c2d0;
+}
+.job_company_index {
+  color: gray;
+}
+.job_page {
+  width: 90%;
+  margin-left: 5%;
+  font-size: 1.8rem;
 }
 .top_margin {
   margin-top:10px;
@@ -33,6 +50,9 @@ body {
 .right_pane {
   width:68%;
   float:right;
+  margin-right: 1%;
+}
+.job_list {
 }
 .header {
   border-bottom: solid 4px #EB2B36;

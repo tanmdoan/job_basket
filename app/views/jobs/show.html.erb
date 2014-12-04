@@ -1,15 +1,17 @@
+<%= link_to "Back to Jobs", jobs_path, class:"btn btn-default btn-sm filter-btn" %>
+
 <div id='job-wrapper'>
-  <div class='seventy_percent'>
-    <div class="panel panel-default hide-locations">
-      <div class="panel-heading">
-        <h3 class="panel-title <%= @job.id %>"><%= @job.title %></h3>
-      </div>
-      <div class='panel-body'>
-        URL: <%= @job.url %>
-        <div>Posted On: <%= @job.posted_on %></div>
-        <div>Description: <%= sanitize @job.description %></div>
-      </div>
-    </div>
+
+  <div class='job_page'>
+    <h1 style="color:#22c2d0; margin-bottom: -5px"><%= @job.title %></h1>
+    <% if @job.company %>
+      <%= link_to @job.company.name, company_path(@job.company) %><br>
+    <% end %>
+    <br>
+    <%= @job.url %>
+    <div><%= @job.posted_on ? "This job was posted originaly on #{@job.posted_on}" : "" %></div>
+
+    <div><%= sanitize @job.description %></div>
   </div>
 
-</div> <!-- this is the end of the job wrapper -->
+</div>
