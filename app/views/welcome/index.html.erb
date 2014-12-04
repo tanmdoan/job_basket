@@ -1,40 +1,15 @@
-<div id="carousel-main" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-main" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-main" data-slide-to="1"></li>
-    <li data-target="#carousel-main" data-slide-to="2"></li>
-  </ol>
+<div class="texturizer"></div>
+<div class="video"><%= video_tag random_video, autoplay: true, loop: true, id:"bgvid", muted: true %></div>
+<div class="welcome_box">
+  <div class="home_text" style="padding-top: 50px;">Wellcome to the Job Basket.</div>
+  <div class="home_text" style="padding-bottom: 50px;">Only for the Turing School Community</div>
 
-  <div class="carousel-inner main-carousel" role="listbox">
-    <div class="item active">
-      <%= image_tag('job_search1.jpg', class: "car-img-1")  %>
-      <div class="carousel-caption">
-        caption 1 goes here
-      </div>
-    </div>
 
-    <div class="item">
-      <%= image_tag('job_search2.jpg' )%>
-      <div class="carousel-caption">
-        caption 2 goes here
-      </div>
-    </div>
-
-    <div class="item">
-      <%= image_tag('job_search3.jpg', class: "car-img") %>
-      <div class="carousel-caption">
-        caption 3 goes here
-      </div>
-    </div>
+  <div>
+    <%= link_to login_path do %>
+      <%= image_tag "octocat_basket.png", class:"github_logo" %>
+      <h4 class="text-center">On me you want to click </h4>
+    <% end %>
   </div>
-
-  <a class="left carousel-control" href="#carousel-main" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-main" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 
 </div>
