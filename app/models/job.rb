@@ -44,6 +44,7 @@ class Job < ActiveRecord::Base
       remote: true
       )
     end
+  end
 
 
   def self.build_jobs(entries)
@@ -73,7 +74,5 @@ class Job < ActiveRecord::Base
     build_jobs(remote_entries)
   end
 
-
-  end
 
 end
