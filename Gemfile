@@ -42,4 +42,6 @@ group :development, :test do
   gem 'factory_girl_rails',   '~> 4.5.0'
   gem 'better_errors',        '~> 2.0.0'
   gem 'binding_of_caller',    '~> 0.7.2'
+  gem 'vcr'
+  gem 'webmock'
 end
