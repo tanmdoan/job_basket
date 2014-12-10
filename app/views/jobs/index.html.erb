@@ -36,36 +36,5 @@
 </div>
 
 <div id='job-wrapper'><div class= 'container-fluid'><div class='row'>
-  <%= div_for(@jobs, class: 'job_list') do |job| %>
-    <%= link_to  job_path(job) do %>
-      <div class="jobs_rp">
-        <div class="<%=job.location.to_s.delete("' ',/;")%> <%= job.remote %>  hide-locations">
-          <h2 class=" <%=job.id%> job_title_index"><%= job.title %></h2>
-
-          <% end %>
-          <h5 class="<%=job.id%>">
-            <% if job.company %>
-              <%= link_to company_path(job.company.id), class: "job_company_index" do %>
-                <%= job.company.name %>
-                <% end %>
-            <% end %>
-          </h5>
-
-          <div class='panel-body'>
-            <%= link_to "#{job.url}", job.url %>
-            <div><%= job.posted_on ? "This job was posted originaly on #{job.posted_on}" : "" %></div>
-            <div><%= sanitize job.description.truncate(250)  %></div>
-            <div class="favorite-btn">
-              <%= button_to favorite_jobs_path(job_id: job.id), method: "post",
-                                                                remote: true,
-                                                                class: 'btn btn-default btn-xs favorite' do%>
-                <i class="fa fa-star"> </i> Favorite this job!
-              <% end %>
-              <hr>
-            </div>
-          </div>
-
-        </div>
-      </div>
-  <% end %>
+<%= render :partial => 'job', :collection => @jobs %>
 </div></div></div>

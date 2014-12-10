@@ -5,7 +5,6 @@ describe "Add Jobs", type: :feature do
   it "creates a job manually" do
     login
     click_link "add_job"
-    save_and_open_page
     fill_in "job_title", with: "Database Administrator"
     fill_in "job_description", with: "Come make the databases."
     fill_in "job_location", with: "San Francisco, CA"
