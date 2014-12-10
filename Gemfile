@@ -23,6 +23,7 @@ gem 'sanitize'
 gem 'htmlentities', '~> 4.3.2'
 gem 'unobtrusive_flash', '>=3'
 gem 'whenever', require: false
+gem 'thin'
 
 group :production do
   gem 'rails_12factor'
