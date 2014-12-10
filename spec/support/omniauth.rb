@@ -19,5 +19,7 @@ OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
 
 def login
   visit root_path
-  click_link_or_button('login')
+  VCR.use_cassette('standard_login') do
+    click_link_or_button('login')
+  end  
 end

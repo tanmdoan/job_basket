@@ -15,6 +15,12 @@ class JobsController < AuthorizationController
   end
 
   def create
+    @job = Job.create!(job_params)
+    redirect_to jobs_path
+  end
+
+  def create_from_github
+    # This is dead code
     description = params["job"]["description"]
     location    = params["job"]["location"]
     options   = "description=#{description}&location=#{location}"
@@ -22,8 +28,6 @@ class JobsController < AuthorizationController
     job       = Job.new
     get_json  = JSON.parse(response.body)
     job.job_builder(get_json)
-    @job = Job.create(job_params)
-    redirect_to jobs_path
   end
 
   private
