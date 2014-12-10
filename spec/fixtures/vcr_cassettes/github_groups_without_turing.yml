@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/users/HoracioChavez/orgs?client_id=&client_secret=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Wed, 10 Dec 2014 16:46:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Ratelimit-Reset:
+      - '1418233587'
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Etag:
+      - '"a5e62a101831b6c22e80f1c2bc839481"'
+      Vary:
+      - Accept
+      - Accept-Encoding
+      X-Github-Media-Type:
+      - github.v3
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - deny
+      Content-Security-Policy:
+      - default-src 'none'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Github-Request-Id:
+      - 4B47FA07:6713:4204F9E:548878E3
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Served-By:
+      - 8dd185e423974a7e13abbbe6e060031e
+    body:
+      encoding: UTF-8
+      string: '[{"login":"railsbook","id":9400277,"url":"https://api.github.com/orgs/railsbook","repos_url":"https://api.github.com/orgs/railsbook/repos","events_url":"https://api.github.com/orgs/railsbook/events","members_url":"https://api.github.com/orgs/railsbook/members{/member}","public_members_url":"https://api.github.com/orgs/railsbook/public_members{/member}","avatar_url":"https://avatars.githubusercontent.com/u/9400277?v=3"}]'
+    http_version:
+  recorded_at: Wed, 10 Dec 2014 16:46:28 GMT
+recorded_with: VCR 2.9.3
