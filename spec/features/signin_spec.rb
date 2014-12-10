@@ -6,7 +6,7 @@ RSpec.describe "Login with GitHub", type: :feature do
     it "is successful" do
 
       visit root_path
-      expect(page).to have_content "Connect with Github"
+      expect(page).to have_css('#login')
 
       login
       expect(page).to have_content "Jobs"
