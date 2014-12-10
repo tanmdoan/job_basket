@@ -1,14 +1,21 @@
+<!DOCTYPE html>
+<html>
 
-<div class="texturizer"></div>
-<div class="video"><%= video_tag random_video, autoplay: true, loop: true, id:"bgvid", muted: true %></div>
-<div class="welcome_box">
-  <div class="home_text" style="padding-top: 50px;">Wellcome to the Job Basket.</div>
-  <div class="home_text" style="padding-bottom: 50px;">Only for the Turing School Community</div>
+  <head>
+    <%= render partial: 'layouts/head' %>
+  </head>
 
+  <body>
+    <div class="texturizer"></div>
+    <div class="video"><%= video_tag random_video, autoplay: true, loop: true, id:"bgvid", muted: true %></div>
+    <div class="welcome_box">
+      <div class="home_text" style="padding-top: 50px;">Wellcome to the Job Basket.</div>
 
-  <div>
-    <%= link_to image_tag("octocat_basket.png", class:"github_logo"), login_path %>
-    <%= link_to "Login Here", login_path, :class => "text-center", :id => 'login' %>
-  </div>
+      <div>
+        <%= link_to image_tag("octocat_basket.png", class:"github_logo"), login_path %>
+        <%= link_to "Login Here", login_path, :class => "text-center", :id => 'login' %>
+      </div>
 
-</div>
+    </div>
+  </body>
+</html>

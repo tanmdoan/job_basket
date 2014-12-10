@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
       user.image    = auth["extra"]["raw_info"]["avatar_url"]
     end
   end
+
+  def first_name
+    name.split(' ').first
+  end
 end
