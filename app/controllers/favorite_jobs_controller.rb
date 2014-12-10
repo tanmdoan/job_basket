@@ -1,5 +1,5 @@
-class FavoriteJobsController < ApplicationController
-
+class FavoriteJobsController < AuthorizationController
+  
   def index
     @favorite_jobs = current_user.favorite_jobs
   end
