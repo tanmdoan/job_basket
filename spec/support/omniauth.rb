@@ -10,6 +10,11 @@ def github_mock_auth
     },
     credentials: {
       token: 'mock_token'
+    },
+    extra:{
+      raw_info: {
+        avatar_url: 'http://gravatar.com/horacio.jpg'
+      }
     }
   })
 end
@@ -18,8 +23,5 @@ end
 def login
   visit root_path
   github_mock_auth
-
-  within(".btn-github") do
-    click_link_or_button('Connect with Github')
-  end
+  click_link_or_button('login')
 end

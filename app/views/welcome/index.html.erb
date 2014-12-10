@@ -7,10 +7,8 @@
 
 
   <div>
-    <%= link_to login_path do %>
-      <%= image_tag "octocat_basket.png", class:"github_logo" %>
-      <h4 class="text-center">On me you want to click </h4>
-    <% end %>
+    <%= link_to image_tag("octocat_basket.png", class:"github_logo"), login_path %>
+    <%= link_to "Login Here", login_path, :class => "text-center", :id => 'login' %>
   </div>
 
 </div>

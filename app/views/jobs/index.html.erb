@@ -9,6 +9,9 @@
       <!-- This is a div to store our flash messages -->
       <div class='.unobtrusive-flash-container'></div>
 
+      <div class='actions'>
+        <%= link_to 'Add a Job', new_job_path, :id => "add_job" %>
+      </div>
       <div id="filter-wrapper" class="collapse in">
         <div class='location'>
           <div class= 'filter-buttons' data-toggle="buttons">
