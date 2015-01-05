@@ -7,7 +7,6 @@ RSpec.describe 'A user favoriting jobs', type: :feature do
   context 'favoriting a job' do
     it 'can find the favorite button' do
       login
-      click_link("Jobs")
       within("#job_1") do
         expect(page).to have_button("Favorite")
       end
@@ -37,14 +36,6 @@ RSpec.describe 'A user favoriting jobs', type: :feature do
       visit favorite_jobs_path
 
       expect(page).to have_content(job_one.title)
-    end
-
-    it 'can click on name to view favorite jobs' do
-      visit root_path
-      login
-      click_link("Welcome")
-
-      expect(current_path).to eq(favorite_jobs_path)
     end
   end
 

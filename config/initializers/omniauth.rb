@@ -1,4 +1,4 @@
 # config/initializers/omniauth.rb
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: "user:email,read:org"
+  provider :github, Rails.application.secrets.github_key, Rails.application.secrets.github_secret, scope: "user:email,read:org"
 end

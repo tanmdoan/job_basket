@@ -1,0 +1,14 @@
+<br><br><br>
+<h1 style="margin-bottom: 30px;"> Add Jobs from Github </h1>
+
+<div style="width: 50%; padding-bottom: 100px;">
+  <%= form_for @job, url: jobs_path do |f| %>
+    <%= f.text_field :description, id: "github_description", placeholder: "Description", class:"input_class"%>
+    <br><br>
+    <%= f.text_field :location, id: "github_location", placeholder: "Location", class:"input_class"  %>
+    <br><br>
+    <%= f.text_field :job_type, placeholder: "Job Type", class:"input_class"  %>
+    <br><br>
+    <%= f.submit "Retrieve jobs from Github" %>
+  <% end %>
+</div>

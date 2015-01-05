@@ -1,0 +1,18 @@
+<div id="filter-wrapper" class="collapse in">
+  <h3>Filters</h3>
+  <div class= 'location filter-buttons' data-toggle="buttons">
+    <h5>Location</h5>
+    <% @locations.each do |location| %>
+      <label id="<%= location.to_s.delete("' ',/;")%>" class="btn btn-primary btn-xs filter-button">
+        <input type="radio" autocomplete="off" value=<%= location %>> <%= location %>
+      </label>
+    <% end %>
+    <h5>Job Type</h5>
+    <label id= 'true' class='btn btn-primary btn-xs filter-button'>
+      <input type="radio" autocomplete="off">Remote
+    </label>
+    <label id= 'false' class='btn btn-primary btn-xs filter-button'>
+      <input type="radio" autocomplete="off">On-Site
+    </label>
+  </div>
+</div>

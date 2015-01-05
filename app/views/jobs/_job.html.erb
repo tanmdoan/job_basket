@@ -1,0 +1,25 @@
+<div class="jobs_rp" id="job_<%= job.id %>">
+  <div class="<%=job.location.to_s.delete("' ',/;")%> <%= job.remote %>  hide-locations">
+    <%= link_to job do %>
+      <h2 class="job_title_index"><%= job.title %></h2>
+    <% end %>
+
+    <% if job.company %>
+      <h5>
+        <%= link_to job.company.name, company_path(job.company.id), class: "job_company_index" %>
+      </h5>
+    <% end %>
+
+    <div class='panel-body'>
+      <%= link_to "#{job.url}", job.url %>
+      <div><%= "via #{job.posted_on}" if job.posted_on %></div>
+      <div><%= sanitize job.description.truncate(250) %></div>
+      <div class="favorite-btn">
+        <%= button_to 'Favorite this job!', favorite_jobs_path(job_id: job.id), method: "post",
+        remote: true,
+        class: 'btn btn-default btn-xs favorite' %>
+      </div>
+    </div>
+
+  </div>
+</div>

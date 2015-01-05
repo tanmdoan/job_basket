@@ -3,12 +3,12 @@ class SessionsController < ApplicationController
   def create
     auth = request.env["omniauth.auth"]
     nickname = auth[:info][:nickname]
-    if belongs_to_turing?(nickname)
+    if UserValidator.new.member?(nickname)
       user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
       session[:user_id] = user.id
       redirect_to jobs_path, notice: "Signed in!"
     else
-      redirect_to root_url, notice: "You're not that cool!"
+      redirect_to '/401'
     end
   end
 
@@ -16,14 +16,4 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_url, :notice => "Signed out!"
   end
-
-  private
-
-  def belongs_to_turing?(nickname)
-    url         = "https://api.github.com/users/#{nickname}/orgs?client_id=#{ENV['GITHUB_KEY']}&client_secret=#{ENV['GITHUB_SECRET']}"
-    response    = Faraday.get(url)
-    orgs        = JSON.parse(response.body)
-    turing_hash = orgs.find { |org| org['id'] == 7934292 }
-  end
-
 end
